@@ -25,8 +25,8 @@ What I did/learned:
 This web-app is written to be executed on localhost with minimal installation.
 
   1. Clone the GitHub repository: git clone https://github.com/dominiccc13/local_pwm.git
-  2. CD into root directory: cd "C:\Path\To\Your\Directory\"
-  2. Download and install Python 3.13.7 and VS Code if necessary: https://www.python.org/downloads/release/python-3137/ https://code.visualstudio.com/download
+  2. Open a terminal and CD into root directory: cd "C:\Path\To\Your\Directory\"
+  2. Download and install Python 3.13.7 if necessary: https://www.python.org/downloads/release/python-3137/
   3. Create a virtual environment: python -m venv .venv
   4. Activate it: .\.venv\Scripts\Activate
   5. Install packages: pip install -r requirements.txt
