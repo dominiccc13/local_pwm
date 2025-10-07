@@ -32,7 +32,7 @@ This web-app is written to be executed on localhost with minimal installation.
   5. Install packages: pip install -r requirements.txt
   6. Create and populate database: py .\init_db\init_db.py
   7. Run Flask server: py server_local.py
-  8. Ctrl+click on local ip address printed to terminal.
+  8. Go to 127.0.0.1:3000 in a browser
   9. Refer to testing account information below to test the web-app.
 
 # --------------                             -------------- #
