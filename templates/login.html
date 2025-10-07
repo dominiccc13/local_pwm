@@ -1,0 +1,111 @@
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+    <h1 id="header">Login</h1>
+    
+    <div class="container">
+        <h3>Enter Your Account Credentials</h3>
+        <input type="text" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login">Login</button>
+        <p id="notice"></p>
+    </div>
+    
+    <div class="container">
+        <h3 id="unregistered">Not yet registered? </h3>
+        <button id="register">
+            <a href="./register">Register</a>
+        </button>
+    </div>
+</body>
+
+<script>
+    sessionStorage.removeItem('encryptionKey');
+
+    const loginBtn = document.getElementById('login');
+    loginBtn.addEventListener('click', login);
+
+    function login() {
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('password').value;
+
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email: email, pass: pass})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = data.redirect;     
+            } else {
+                document.getElementById('notice').innerText = data.notice;
+            }
+        });
+    }
+</script>
+
+<style>
+    *:not(input):not(textarea):not([contenteditable]) {
+        caret-color: transparent;
+        outline: none;
+    }
+
+    input, textarea, [contenteditable] {
+        caret-color: auto;
+    }
+
+    body {
+        background-color: #f4f4f4;
+    }
+
+    #header {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .container {
+        margin: 20px auto 20px auto;
+        padding: 10px;
+        width: 33%;
+        text-align: center;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 2px 10px 2px rgba(0,0,0,0.2);
+    }
+
+    input {
+        display: block;
+        background-color: white;
+        text-align: left;
+        margin: 10px auto;
+        width: 35%;
+        
+        border: 1px solid #ccc;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #login {
+        width: 35%;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    #register a {
+        cursor: default;
+        text-decoration: none;
+        color: black;
+    }
+
+    #register {
+        width: 35%;
+        padding: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+</style>
