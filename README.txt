@@ -1,5 +1,5 @@
 # -------------- Instructions to run program -------------- #
-This web app is written to be able to be executed on localhost with minimal installation.
+This web-app is written to be executed on localhost with minimal installation.
 
   1. Clone the GitHub repository: git clone https://github.com/dominiccc13/local_pwm.git
   2. CD into root directory: cd "C:\Path\To\Your\Directory\"
