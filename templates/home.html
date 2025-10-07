@@ -13,16 +13,6 @@
         </div>
     </div>
 
-    <!-- <div id="get-div" class="container">
-        <h3>Get Account</h3>
-            
-            <option value="" id="selected-disabled" selected disabled hidden>Select an account...</option> -->
-            <!-- Dynamically populate select tag with account options (only account names are retrieved from db) -->
-        <!-- </select>
-        <button id="get">Get</button>
-        <p id="get-account-notice"></p>
-    </div> -->
-
     <div id="get-div" class="container">
         <h3>Get Account</h3>
         <input list="accounts" id="account" name="account" placeholder="Select an account...">
@@ -106,44 +96,6 @@
     const datalist = document.getElementById('accounts');
     const selection = document.getElementById('account');
 
-    // getBtn.onclick = e => {
-    //     // console.log(e.target)
-    //     const baseUrl = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
-    //     if (navigator.clipboard && navigator.clipboard.writeText) {
-    //         navigator.clipboard.writeText('');
-    //     }
-
-    //     const statuses = document.querySelectorAll('.copied-status');
-    //     statuses.forEach(status => {
-    //         status.innerText = '';
-    //     })
-
-    //     fetch(`${baseUrl}/get_account?account=${selection.value}`)
-    //     .then(response => response.json())
-    //     .then(res => {
-    //         if (!res.arr) {
-    //             document.getElementById('get-account-notice').innerText = res.notice;
-    //         } else {
-    //             document.getElementById('get-account-notice').innerText = '';
-    //             data = res.info;
-    //             encryptedPassword = data[4];
-    //             // if the following line does not work, do not update anything but give errors. if it does, update fields
-    //             decryptedPassword = CryptoJS.AES.decrypt(encryptedPassword, encryptionKey).toString(CryptoJS.enc.Utf8);
-
-    //             if (decryptedPassword !== '') {
-    //                 document.getElementById('username').innerText = data[2];
-    //                 document.getElementById('email').innerText = data[3];
-    //                 document.getElementById('password').innerText = decryptedPassword;
-    //             } else {
-    //                 document.getElementById('username').innerText = 'Something went wrong. Please try again.';
-    //                 document.getElementById('email').innerText = 'Something went wrong. Please try again.';
-    //                 document.getElementById('password').innerText = 'Something went wrong. Please try again.';
-    //             }
-    //         }
-    //     });
-    // };
-    // getBtn.addEventListener('click', get_account);
-
     const modal = document.getElementById("myModal");
     const openBtn = document.getElementById("openModalBtn");
     const modalSubmitBtn = document.getElementById('modal-submit');
@@ -155,24 +107,6 @@
     
     // Open modal code
     document.addEventListener("DOMContentLoaded", () => {display_modal();});
-    // window.onload = function() {
-    //     if (!sessionStorage.getItem('encryptionKey')) {
-    //         const modal = document.getElementById('myModal');
-    //         modal.style.display = 'block';
-    //     } else {
-    //         modal.style.display = 'none';
-    //         fetch('http://localhost:3000/load_accounts')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             data.forEach(account => {
-    //                 const option = document.createElement('option');
-    //                 option.value = account;
-    //                 option.textContent = account;
-    //                 selection.appendChild(option);
-    //             });
-    //         })
-    //     }
-    // }
 
     function display_modal() {
         if (!sessionStorage.getItem('encryptionKey')) {
@@ -395,16 +329,6 @@
         margin-bottom: 15px;
     }
 
-    /* Add account div */
-    /* #add-div {
-        margin: 10px auto 20px auto;
-        padding: 10px;
-        background-color: white;
-        width: 33%;
-        border-radius: 20px;
-        box-shadow: 0 2px 10px 2px rgba(0,0,0,0.2);
-    } */
-
     #add-div input {
         margin: 10px auto;
         width: 35%;
@@ -413,27 +337,6 @@
     #add-div button {
         width: 35%;
     }
-
-    /* Get account div */
-    /* #get-div {
-        margin: 20px auto 20px auto;
-        padding: 10px;
-        background-color: white;
-        width: 33%;
-        border-radius: 20px;
-        box-shadow: 0 2px 10px 2px rgba(0,0,0,0.2);
-    } */
-
-    /* #get-div label {
-        color: rgba(0,0,0,0.54);
-        display: inline-block;
-        background-color: white;
-        border: 1px solid #ccc;
-        padding: 5px;
-        font-size: 16px;
-        width: 35%;
-        /* border-radius: 4px; */
-    /* } */
 
     #get-div #account {
         text-align: center;
@@ -468,12 +371,6 @@
         width: 15%;
     }
 
-    /* #get-fields {
-        margin: 0 auto;
-        width: 33%;
-        background-color: #ccc;
-    } */
-
     table {
         margin: 0 auto;
         border-collapse: collapse;
@@ -496,8 +393,8 @@
         text-decoration: none;
         color: black;
     }
-
+/* 
     @media (max-width: 600px) {
 
-    }
+    } */
 </style>
