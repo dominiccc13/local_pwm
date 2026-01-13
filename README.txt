@@ -1,4 +1,4 @@
-# -------------- About the program -------------- #
+# About the program #
 
 This is a full-stack password manager web-app designed to manage passwords across
 multiple devices without relying on services like Google or Microsoft. I wanted
@@ -16,11 +16,7 @@ What I did/learned:
  - Full-stack integration: End-to-end application architecture, including database design, secure server 
    logic, and client-side encryption workflows.
 
-# --------------                   -------------- #
-
-
-
-# -------------- Instructions to run program -------------- #
+#  Instructions to run program  #
 
 This web-app is written to be executed on localhost with minimal installation.
 
@@ -35,11 +31,7 @@ This web-app is written to be executed on localhost with minimal installation.
   8. Go to 127.0.0.1:3000 in a browser
   9. Refer to testing account information below to test the web-app.
 
-# --------------                             -------------- #
-
-
-
-# -------------- Information for testing -------------- #
+#  Information for testing  #
 Sample email, password, and encryption key for testing:
 
 email: quick_fox@email.com
@@ -49,4 +41,3 @@ encryption key: keytest1
 email: techy_turtle@email.com
 pass: shadowriver#
 encryption key: user2key
-# --------------                         -------------- #
