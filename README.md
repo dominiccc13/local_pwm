@@ -16,6 +16,8 @@ What I did/learned:
  - Full-stack integration: End-to-end application architecture, including database design, secure server 
    logic, and client-side encryption workflows.
 
+Note: Comments are left to display what the code looks like on the deployed version with full functionality.
+
 #  Instructions to run program  #
 
 This web-app is written to be executed on localhost with minimal installation.
