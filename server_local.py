@@ -210,7 +210,7 @@ def login():
 
 @app.route('/home')
 def home():
-    if 'email' in session and session['confirmed'] == 1:
+    if session['confirmed'] and session['confirmed'] == 1:
         return render_template('home.html')
     
     return redirect(url_for('login'))
