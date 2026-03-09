@@ -69,6 +69,7 @@
                 option.class = 'option-class'
                 option.value = account;
                 option.textContent = account;
+                option.className = 'account-option';
                 datalist.appendChild(option);
             });
         })
@@ -163,6 +164,9 @@
         .then(data => {
             if (data.success) {
                 document.getElementById('add-notice').innerText = 'Account added successfully.';
+                document.querySelectorAll('.account-option').forEach(a => {
+                    a.remove();
+                });
             } else {
                 document.getElementById('add-notice').innerText = data.notice;
             }
