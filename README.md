@@ -26,7 +26,7 @@ This web-app is written to be executed on localhost with minimal installation.
   2. Open a terminal and CD into root directory: cd "C:\Path\To\Your\Directory\"
   2. Download and install Python 3.13.7 if necessary: https://www.python.org/downloads/release/python-3137/
   3. Create a virtual environment: python -m venv .venv
-  4. Activate it: .\.venv\Scripts\Activate
+  4. Activate it: .\\.venv\Scripts\Activate
   5. Install packages: pip install -r requirements.txt
   6. Create and populate database: py .\init_db\init_db.py
   7. Run Flask server: py server_local.py
