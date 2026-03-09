@@ -94,7 +94,6 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     session.clear()
-    email = None
     if request.method == 'POST':
         data = request.get_json()
         email = data['email']
@@ -123,12 +122,10 @@ def register():
                 '''
                 cur.execute('INSERT INTO users (email, password_hash, confirmed) VALUES (?, ?, ?)', (email, hashed_password, 1,))
                 conn.commit()
-                return jsonify({"data": "Email registered."})
+                return jsonify({"data": "Email registered. Navigate to login screen to login."})
             else:
                 return jsonify({"data": "Email already registered. Please enter a new email."})
 
-    session['email'] = email
-    session['confirmed'] = 1
     return render_template('register.html')
 
 @app.route('/verify/<email>/<token>')
@@ -210,7 +207,7 @@ def login():
 
 @app.route('/home')
 def home():
-    if session['confirmed'] and session['confirmed'] == 1:
+    if 'email' in session and session['confirmed'] == 1:
         return render_template('home.html')
     
     return redirect(url_for('login'))
