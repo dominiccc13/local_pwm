@@ -247,7 +247,7 @@ def add_account():
 
     with sqlite3.connect('users.db') as conn:
         cur = conn.cursor()
-        cur.execute('SELECT * FROM passwords WHERE account = ?', (data['account'],))
+        cur.execute('SELECT * FROM passwords WHERE account = ? AND user_id = ?', (data['account'], session['user_id']))
         account = cur.fetchone()
 
     if account:
