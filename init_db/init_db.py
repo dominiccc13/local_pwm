@@ -5,7 +5,9 @@ users = []
 with open(".\\init_db\\users_table.csv", "r") as f:
     for line in f:
         row = line.split(",")
-        row = [row[0], row[1], row[-1]]
+        if row[0] == "id":
+            continue
+        row = [row[0], row[1], row[-1].strip()]
         users.append(row)
 
 passwords = []
@@ -13,6 +15,8 @@ passwords = []
 with open(".\\init_db\\passwords_table.csv", "r") as f:
     for line in f:
         row = line.split(",")
+        if row[0] == "user_id":
+            continue
         passwords.append(row)
 
 conn = sqlite3.connect("users.db")
@@ -37,8 +41,6 @@ cur.execute('''
     )         
 ''')
 for row in users:
-    if row == users[0]:
-        continue
     cur.execute(f'''
         INSERT INTO users (email, password_hash)
         VALUES (?, ?)      
@@ -46,8 +48,6 @@ for row in users:
     conn.commit()
 
 for row in passwords:
-    if row == passwords[0]:
-        continue
     cur.execute(f'''
         INSERT INTO passwords (user_id, account, username, email, encrypted_password)
         VALUES (?, ?, ?, ?, ?)      

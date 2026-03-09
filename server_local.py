@@ -94,6 +94,7 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     session.clear()
+    email = None
     if request.method == 'POST':
         data = request.get_json()
         email = data['email']
@@ -126,6 +127,8 @@ def register():
             else:
                 return jsonify({"data": "Email already registered. Please enter a new email."})
 
+    session['email'] = email
+    session['confirmed'] = 1
     return render_template('register.html')
 
 @app.route('/verify/<email>/<token>')
