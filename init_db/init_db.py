@@ -33,7 +33,7 @@ cur.execute('''
 cur.execute('''
     CREATE TABLE IF NOT EXISTS passwords (
         user_id INTEGER NOT NULL,
-        account TEXT NOT NULL UNIQUE,
+        account TEXT NOT NULL,
         username TEXT,
         email TEXT,
         encrypted_password TEXT NOT NULL,
