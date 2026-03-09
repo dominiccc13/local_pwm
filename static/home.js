@@ -146,7 +146,6 @@
 
     // Add new account function
     function add_account() {
-        let userId;
         const accountInput = document.getElementById('account-input').value;
         const usernameInput = document.getElementById('username-input').value;
         const emailInput = document.getElementById('email-input').value;
@@ -158,7 +157,7 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({userId: userId, account: accountInput, username: usernameInput, email: emailInput, password: encryptedPass})
+            body: JSON.stringify({account: accountInput, username: usernameInput, email: emailInput, password: encryptedPass})
         })
         .then(response => response.json())
         .then(data => {
